@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- section header start -->
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+        <div class="container">
+            <div class="flex items-center justify-between relative">
+                <div class="px-4">
+                    <a href="#home" class="font-bold text-lg text-[#f97316] block py-6 uppercase">gym</a>
+                </div>
+                <div class="flex items-center px-4">
+                    <button id="hamburger" name="hamburger"
+                        class="block absolute right-4 lg:hidden rounded-full w-12 h-12 bg-gray-800" type="button">
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+                    </button>
+                    <nav id="nav-menu"
+                        class="hidden bg-white absolute py-5 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                        <ul class="block lg:flex">
+                            <li class="group">
+                                <a href="#home"
+                                    class="text-base text-gray-800 py-2 mx-8 flex group-hover:text-[#f97316]">Beranda</a>
+                            </li>
+                            <li class="group">
+                                <a href="#about"
+                                    class="text-base text-gray-800 py-2 mx-8 flex group-hover:text-[#f97316]">Tentang
+                                    Saya</a>
+                            </li>
+                            <li class="group">
+                                <a href="#features"
+                                    class="text-base text-gray-800 py-2 mx-8 flex group-hover:text-[#f97316]">Feature</a>
+                            </li>
+                            <li class="group">
+                                <a href="#classes"
+                                    class="text-base text-gray-800 py-2 mx-8 flex group-hover:text-[#f97316]">Classes</a>
+                            </li>
+                            <li class="group">
+                                <a href="#schedule"
+                                    class="text-base text-gray-800 py-2 mx-8 flex group-hover:text-[#f97316]">Schedule</a>
+                            </li>
+                            <li class="group">
+                                <a href="#calculator"
+                                    class="text-base text-gray-800 py-2 mx-8 flex group-hover:text-[#f97316]">Calculator</a>
+                            </li>
+                            <li class=" mt-3 lg:mt-0 flex items-center pl-8">
+                                <div class="flex">
+                                    <a href="#" target="_blank"
+                                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-gray-800 text-gray-800 hover:border-bg-[#f97316] hover:bg-[#f97316] hover:text-white">
+                                        <svg role="img" class="fill-current" width="20" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <title>YouTube</title>
+                                            <path
+                                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/skysalsa_/" target="_blank"
+                                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-gray-800 text-gray-800 hover:border-bg-[#f97316] hover:bg-[#f97316] hover:text-white">
+                                        <svg role="img" class="fill-current" width="20" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <title>Instagram</title>
+                                            <path
+                                                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- section header end -->
+    <!-- section hero start -->
+    <section id="home">
+        <div class="hero min-h-screen pt-8 pb-16 rounded-bl-[64px] bg-orange-100">
+            <div class="hero-content flex-col lg:flex-row-reverse mb-10 lg:mb-2">
+                <div class="w-full self-end px-4 lg:w-1/2 mx-auto">
+                    <div class="relative mt-10 lg:mt-9 lg:right-0">
+                        <img src="dist/img/2.png" alt="Alya Salsa" class="max-w-full mx-auto relative z-10">
+                        <span class="absolute -bottom-0 left-1/2 -translate-x-1/2">
+                            <svg width="500" height="400" style="stroke:#f97316; stroke-width: 6;" viewBox="0 0 200 200"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#fef9c3"
+                                    d="M44.6,-76.6C58.4,-69.3,70.5,-58.5,78.3,-45.2C86.1,-31.8,89.5,-15.9,88.5,-0.6C87.5,14.8,82.2,29.5,74.4,42.9C66.6,56.3,56.4,68.2,43.6,75.8C30.8,83.5,15.4,86.8,-0.4,87.5C-16.3,88.3,-32.5,86.3,-46.6,79.5C-60.8,72.6,-72.8,60.8,-80.6,46.7C-88.4,32.6,-92,16.3,-92,0C-92.1,-16.4,-88.6,-32.8,-80.3,-46C-72.1,-59.3,-59.1,-69.5,-44.9,-76.6C-30.7,-83.7,-15.3,-87.7,0,-87.7C15.4,-87.8,30.8,-83.9,44.6,-76.6Z"
+                                    transform="translate(100 100) scale(1.2)" />
+                            </svg>
+                        </span>
+                        <div class=" absolute top-2/3 left-2/3 card w-44 bg-base-100 shadow-xl z-50 py-2 px-2">
+                            <div class="flex">
+                                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/4.webp" class="rounded-full w-16 "
+                                    alt="Avatar" />
+                                <div class="flex-wrap self-center ml-2">
+                                    <h1 class="text-red-400 font-semibold">Nayla</h1>
+                                    <p class="font-semibold text-gray-800">27 Tahun</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" absolute top-1/2 right-2/3 card w-44 bg-base-100 shadow-xl z-50 py-2 px-2">
+                            <div class="flex">
+                                <img src="dist/img/heartbeat.svg" class="rounded-full w-16" alt="Avatar" />
+                                <div class="flex-wrap self-center ml-6 text-center">
+                                    <h1 class="text-red-400 font-semibold text-4xl">48</h1>
+                                    <p class="font-semibold text-gray-800 text-md">KG</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full self-center px-4 lg:w-1/2 xl:w-1/3">
+                    <h1 class=" font-bold text-5xl text-red-400 mb-2">Enjoy</h1>
+                    <h1 class=" font-bold text-5xl text-gray-800 mb-2">Fitness</h1>
+                    <h1 class=" font-bold text-5xl text-gray-800 mb-2">in our Gym</h1>
+                    <p class="font-medium text-gray-800 mb-10 leading-relaxed">Lorem ipsum dolor, sit amet
+                        consectetur
+                        adipisicing elit. Expedita voluptas libero incidunt repellendus aliquam reprehenderit
+                        voluptates
+                        dolore optio ipsa illo?</p>
+                    <a href=""
+                        class="uppercase text-base font-semibold bg-gray-800 py-3 text-white px-8 rounded-md hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">Buy
+                        Now!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section hero end -->
+
+    <!-- section about start-->
+    <section id="about" class="pb-32">
+        <div class="container pt-36 pb-32 min-h-screen">
+            <div class="flex flex-wrap">
+                <div class="w-full self-end px-4 lg:w-1/2">
+                    <div class="relative mt-10 lg:mt-9 lg:right-0 mb-10 lg:mb-2">
+                        <img src="dist/img/3.png" alt="Alya Salsa" class="max-w-full mx-auto relative z-10">
+                        <span class="absolute -bottom-0 left-1/2 -translate-x-1/2">
+                            <svg width="500" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#ffedd5"
+                                    d="M44.6,-76.6C58.4,-69.3,70.5,-58.5,78.3,-45.2C86.1,-31.8,89.5,-15.9,88.5,-0.6C87.5,14.8,82.2,29.5,74.4,42.9C66.6,56.3,56.4,68.2,43.6,75.8C30.8,83.5,15.4,86.8,-0.4,87.5C-16.3,88.3,-32.5,86.3,-46.6,79.5C-60.8,72.6,-72.8,60.8,-80.6,46.7C-88.4,32.6,-92,16.3,-92,0C-92.1,-16.4,-88.6,-32.8,-80.3,-46C-72.1,-59.3,-59.1,-69.5,-44.9,-76.6C-30.7,-83.7,-15.3,-87.7,0,-87.7C15.4,-87.8,30.8,-83.9,44.6,-76.6Z"
+                                    transform="translate(100 100) scale(1.2)" />
+                            </svg>
+                        </span>
+                        <div
+                            class="absolute left-2/3 bottom-0 card w-24 h-24 shadow-xl z-50 py-2 px-2 rounded-full bg-[#fef9c3]">
+                            <div class="flex">
+                                <img src="dist/img/play.svg" class="rounded-full w-20 items-center" alt="Avatar" />
+                            </div>
+                        </div>
+                        <div
+                            class=" absolute top-[20%] right-[70%] card w-24 h-24 bg-[#fef9c3] shadow-xl z-50 py-2 px-2 rounded-full">
+                            <div class="flex">
+                                <img src="dist/img/gym-time.svg" class="rounded-full w-20 items-center" alt="Avatar" />
+                                <div class="flex-wrap self-center ml-6 text-center">
+                                    <h1 class="text-red-400 font-semibold text-4xl">48</h1>
+                                    <p class="font-semibold text-gray-800 text-md">KG</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 self-end mb-10 lg:w-1/2">
+                    <h4 class="font-bold uppercase text-red-400 text-lg mb-3">About Gym</h4>
+                    <h2 class="font-bold text-gray-800 text-3xl mb-5 max-w-md lg:text-4xl">Build Your Body with Best
+                        Trainers</h2>
+                    <p class="font-medium text-base text-gray-800 max-w-xl lg:text-lg mb-10 ">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Voluptatem corporis necessitatibus magnam accusantium. Sit, error
+                        saepe. Illo veniam facere natus, animi consequatur placeat, magnam eius voluptatum odio aut
+                        quisquam nemo eum minima. Cum nulla corrupti adipisci tenetur libero. Quibusdam quas cumque
+                        aperiam reprehenderit accusantium consectetur sed maiores doloremque. Enim, quam.</p>
+                    <a href=""
+                        class="uppercase text-base font-semibold bg-gray-800 py-3 text-white px-8 rounded-md hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">explore!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section about end -->
+
+    <!-- section features start -->
+    <section id="features" class="pb-32 pt-20">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w-xl mx-auto text-center mb-16">
+                    <h4 class="font-bold uppercase text-red-400 text-lg mb-3">Gym features</h4>
+                    <h2 class="font-bold text-3xl mb-4 sm:text-4xl lg:text-4xl text-gray-800">Physical Activity is good
+                    </h2>
+                    <p class="font-medium text-base text-gray-800 max-w-xl lg:text-lg mb-10 ">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Perferendis repellat nam nesciunt consequatur autem consequuntur
+                        nobis vitae aut expedita ipsa.</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/4">
+                    <div class="relative">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 pt-24 px-6 w-full lg:w-64">
+                            <h3 class="block mb-3 font-bold text-xl text-gray-800">Healty</h3>
+                            <p class="font-medium text-base text-gray-800 mb-6">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Fugiat modi harum sequi officia iusto incidunt quidem, sapiente hic
+                                dignissimos! Consequatur.</p>
+                            <div
+                                class="absolute top-0 left-4 w-20 h-20 shadow-xl z-50 py-2 px-2 rounded-full bg-red-400">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="white"
+                                        class="bi bi-heart-pulse" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053.918 3.995.78 5.323 1.508 7H.43c-2.128-5.697 4.165-8.83 7.394-5.857.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17c3.23-2.974 9.522.159 7.394 5.856h-1.078c.728-1.677.59-3.005.108-3.947C13.486.878 10.4.28 8.717 2.01L8 2.748ZM2.212 10h1.315C4.593 11.183 6.05 12.458 8 13.795c1.949-1.337 3.407-2.612 4.473-3.795h1.315c-1.265 1.566-3.14 3.25-5.788 5-2.648-1.75-4.523-3.434-5.788-5Zm8.252-6.686a.5.5 0 0 0-.945.049L7.921 8.956 6.464 5.314a.5.5 0 0 0-.88-.091L3.732 8H.5a.5.5 0 0 0 0 1H4a.5.5 0 0 0 .416-.223l1.473-2.209 1.647 4.118a.5.5 0 0 0 .945-.049l1.598-5.593 1.457 3.642A.5.5 0 0 0 12 9h3.5a.5.5 0 0 0 0-1h-3.162l-1.874-4.686Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/4 mt-0 lg:mt-10">
+                    <div class="relative">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 pt-24 px-6 w-full lg:w-64">
+                            <h3 class="block mb-3 font-bold text-xl text-gray-800">Confidence</h3>
+                            <p class="font-medium text-base text-gray-800 mb-6">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Fugiat modi harum sequi officia iusto incidunt quidem, sapiente hic
+                                dignissimos! Consequatur.</p>
+                            <div
+                                class="absolute top-0 left-4 w-20 h-20 shadow-xl z-50 py-2 px-2 rounded-full bg-[#f97316]">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="60" fill="white"
+                                        class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/4">
+                    <div class="relative">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 pt-24 px-6 w-full lg:w-64">
+                            <h3 class="block mb-3 font-bold text-xl text-gray-800">Brain Activity</h3>
+                            <p class="font-medium text-base text-gray-800 mb-6">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Fugiat modi harum sequi officia iusto incidunt quidem, sapiente hic
+                                dignissimos! Consequatur.</p>
+                            <div
+                                class="absolute top-0 left-4 w-20 h-20 shadow-xl z-50 py-2 px-2 rounded-full bg-[#e9d5ff]">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="white"
+                                        class="bi bi-activity" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2 xl:w-1/4 mt-0 lg:mt-10">
+                    <div class="relative">
+                        <div class="bg-white rounded-xl overflow-hidden shadow-xl 
+                    mb-10 pt-24 px-6 w-full lg:w-64">
+                            <h3 class="block mb-3 font-bold text-xl text-gray-800">New Friends</h3>
+                            <p class="font-medium text-base text-gray-800 mb-6">Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Fugiat modi harum sequi officia iusto incidunt quidem, sapiente hic
+                                dignissimos! Consequatur.</p>
+                            <div
+                                class="absolute top-0 left-4 w-20 h-20 shadow-xl z-50 py-2 px-2 rounded-full bg-[#2563eb]">
+                                <div class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="60" fill="white"
+                                        class="bi bi-people" viewBox="0 0 16 16">
+                                        <path
+                                            d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section features end -->
+
+    <!-- section classes start -->
+    <section id="classes" class="pt-20 pb-32 bg-orange-100">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w-xl mx-auto text-center mb-16">
+                    <h4 class="font-bold uppercase text-red-400 text-lg mb-3">Gym Classes</h4>
+                    <h2 class="font-bold text-3xl mb-4 sm:text-4xl lg:text-4xl text-gray-800">Physical Activity is good
+                    </h2>
+                    <p class="font-medium text-base text-gray-800 max-w-xl lg:text-lg mb-10 ">Lorem ipsum dolor, sit
+                        amet consectetur adipisicing elit. Ullam, neque. Odit hic excepturi at quas a laudantium sed
+                        corporis libero.</p>
+                </div>
+            </div>
+            <div class="slide-container swiper max-w-6xl w-full py-10">
+                <div class="slide-content my-10 mx-10 overflow-hidden rounded-3xl">
+                    <div class="card-wrapper swiper-wrapper">
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10">
+                                <div class="relative">
+                                    <img src="dist/img/4.png" alt="yoga" class="max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#f97316] py-8 px-10 rounded-lg top-0 right-2/6 scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#" class="block mb-3 font-bold text-xl text-gray-800 truncate">Yoga</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">Kayla Amanda Kusumawati
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10">
+                                <div class="relative">
+                                    <img src="dist/img/5.png" alt="Cycling"
+                                        class="mb-12 max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#e9d5ff] py-8 px-10 rounded-lg top-0 right-2/6 scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#"
+                                            class="block mb-3 font-bold text-xl text-gray-800 truncate">Cycling</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">Aji Wibowo andakusuma
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 dark:bg-slate-800">
+                                <div class="relative">
+                                    <img src="dist/img/6.png" alt="weightlifting"
+                                        class="mb-12 max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#2563eb] py-8 px-10 rounded-lg top-0 right-2/6 scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#" class="block mb-3 font-bold text-xl text-gray-800 truncate">weight
+                                            lifting</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/6.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">laura ninda agatha</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 dark:bg-slate-800">
+                                <div class="relative">
+                                    <img src="dist/img/5.png" alt="Cycling"
+                                        class="mb-12 max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#e9d5ff] py-8 px-10 rounded-lg top-0 right-2/6 scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#"
+                                            class="block mb-3 font-bold text-xl text-gray-800 truncate">Cycling</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">Aji Wibowo andakusuma
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 dark:bg-slate-800">
+                                <div class="relative">
+                                    <img src="dist/img/4.png" alt="yoga" class="max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#f97316] py-8 px-10 rounded-lg top-0 right-2/6 scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#" class="block mb-3 font-bold text-xl text-gray-800 truncate">Yoga</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">Kayla Amanda Kusumawati
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 dark:bg-slate-800">
+                                <div class="relative">
+                                    <img src="dist/img/6.png" alt="weightlifting"
+                                        class="mb-12 max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#2563eb] py-8 px-10 rounded-lg top-0 right-2/6 scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#" class="block mb-3 font-bold text-xl text-gray-800 truncate">weight
+                                            lifting</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/6.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">laura ninda agatha</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 dark:bg-slate-800">
+                                <div class="relative">
+                                    <img src="dist/img/6.png" alt="weightlifting"
+                                        class="mb-12 max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#2563eb] py-8 px-10 rounded-lg top-0 right-2/6 scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#" class="block mb-3 font-bold text-xl text-gray-800 truncate">weight
+                                            lifting</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/6.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">laura ninda agatha</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 dark:bg-slate-800">
+                                <div class="relative">
+                                    <img src="dist/img/5.png" alt="Cycling"
+                                        class="mb-12 max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#e9d5ff] py-8 px-10 rounded-lg top-0 right-2/6  scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#"
+                                            class="block mb-3 font-bold text-xl text-gray-800 truncate">Cycling</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/3.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">Aji Wibowo andakusuma
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card swiper-slide">
+                            <div class="bg-white rounded-xl overflow-hidden shadow-lg 
+                    mb-10 dark:bg-slate-800">
+                                <div class="relative">
+                                    <img src="dist/img/4.png" alt="yoga" class="max-w-full mx-auto relative z-10">
+                                    <div
+                                        class="w-80 h-64 bg-[#f97316] py-8 px-10 rounded-lg top-0 right-2/6  scale-125 lg:scale-100 absolute">
+                                    </div>
+                                </div>
+                                <div class="px-6 pb-2">
+                                    <h3>
+                                        <a href="#" class="block mb-3 font-bold text-xl text-gray-800 truncate">Yoga</a>
+                                    </h3>
+                                    <div class="inline-flex">
+                                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/5.webp"
+                                            class="rounded-full w-16 " alt="Avatar" />
+                                        <h1 class="text-gray-800 font-semibold self-center ml-4">Kayla Amanda Kusumawati
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next "></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- section classes end -->
+
+    <!-- section schedule start -->
+    <section id="schedule" class="pb-32 bg-orange-100">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 self-end lg:w-1/2">
+                    <h4 class="font-bold uppercase text-red-400 text-lg mb-3">schedule</h4>
+                    <h2 class="font-bold text-gray-800 text-3xl mb-5 max-w-md lg:text-4xl">Watch Class Schedule</h2>
+                    <p class="font-medium text-base text-gray-800 max-w-xl lg:text-lg mb-10 ">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Voluptatem corporis necessitatibus magnam accusantium. Sit, error
+                        saepe. Illo veniam facere natus, animi consequatur placeat, magnam eius voluptatum odio aut
+                       </p>
+                    <a href=""
+                        class="uppercase text-base font-semibold bg-gray-800 py-3 text-white px-8 rounded-md hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">explore!</a>
+                </div>
+                <div class="w-full self-end px-4 lg:w-1/2 mx-auto">
+                    <div class="relative mt-0 lg:mt-10 lg:right-0">
+                        <img src="dist/img/7.png" alt="Alya Salsa" class="mx-auto relative z-10">
+                        <span class="absolute -bottom-0 left-1/2 -translate-x-1/2">
+                            <svg width="500" height="400" style="stroke:#f97316; stroke-width: 6;" viewBox="0 0 200 200"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#fef9c3"
+                                    d="M44.6,-76.6C58.4,-69.3,70.5,-58.5,78.3,-45.2C86.1,-31.8,89.5,-15.9,88.5,-0.6C87.5,14.8,82.2,29.5,74.4,42.9C66.6,56.3,56.4,68.2,43.6,75.8C30.8,83.5,15.4,86.8,-0.4,87.5C-16.3,88.3,-32.5,86.3,-46.6,79.5C-60.8,72.6,-72.8,60.8,-80.6,46.7C-88.4,32.6,-92,16.3,-92,0C-92.1,-16.4,-88.6,-32.8,-80.3,-46C-72.1,-59.3,-59.1,-69.5,-44.9,-76.6C-30.7,-83.7,-15.3,-87.7,0,-87.7C15.4,-87.8,30.8,-83.9,44.6,-76.6Z"
+                                    transform="translate(100 100) scale(1.2)" />
+                            </svg>
+                        </span>
+                        <div
+                            class="absolute left-2/3 bottom-0 card w-24 h-24 shadow-xl z-50 py-2 px-2 rounded-full bg-white">
+                            <div class="flex px-4 py-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#f97316" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
+                                    <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                                    <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <div
+                            class=" absolute top-[30%] right-[70%] card w-24 h-24 bg-white shadow-xl z-50 rounded-full">
+                            <div class="flex px-4 py-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="#f97316" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                                    <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section schedule end -->
+
+    <!-- section calculator start -->
+    <section id="calculator" class="pt-20 pb-32 bg-orange-100">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full self-end px-4 lg:w-1/2 mx-auto mb-10 lg:mb-0">
+                    <div class="relative mt-2 lg:mt-10 lg:right-0">
+                        <img src="dist/img/8.png" alt="Alya Salsa" class="mx-auto relative z-10">
+                        <span class="absolute -bottom-0 left-1/2 -translate-x-1/2">
+                            <svg width="500" height="400" style="stroke:#f97316; stroke-width: 6;" viewBox="0 0 200 200"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#fef9c3"
+                                    d="M44.6,-76.6C58.4,-69.3,70.5,-58.5,78.3,-45.2C86.1,-31.8,89.5,-15.9,88.5,-0.6C87.5,14.8,82.2,29.5,74.4,42.9C66.6,56.3,56.4,68.2,43.6,75.8C30.8,83.5,15.4,86.8,-0.4,87.5C-16.3,88.3,-32.5,86.3,-46.6,79.5C-60.8,72.6,-72.8,60.8,-80.6,46.7C-88.4,32.6,-92,16.3,-92,0C-92.1,-16.4,-88.6,-32.8,-80.3,-46C-72.1,-59.3,-59.1,-69.5,-44.9,-76.6C-30.7,-83.7,-15.3,-87.7,0,-87.7C15.4,-87.8,30.8,-83.9,44.6,-76.6Z"
+                                    transform="translate(100 100) scale(1.2)" />
+                            </svg>
+                        </span>
+                        <div
+                            class="absolute left-2/3 bottom-0 card w-24 h-24 shadow-xl z-50 py-2 px-2 rounded-full bg-white">
+                            <div class="flex px-4 py-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="#f97316" class="bi bi-globe" viewBox="0 0 16 16">
+                                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                        <div
+                            class=" absolute top-[10%] right-[75%] card w-24 h-24 bg-white shadow-xl z-50 rounded-full">
+                            <div class="flex px-4 py-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="#f97316" class="bi bi-calculator" viewBox="0 0 16 16">
+                                    <path d="M12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                                    <path d="M4 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm0 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-4z"/>
+                                  </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full px-4 self-end lg:w-1/2">
+                    <h4 class="font-bold uppercase text-red-400 text-lg mb-3">Calculator</h4>
+                    <h2 class="font-bold text-gray-800 text-3xl mb-5 max-w-md lg:text-4xl">Calculate Your BMI</h2>
+                    <p class="font-medium text-base text-gray-800 max-w-xl lg:text-lg mb-10 ">Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Voluptatem corporis necessitatibus magnam accusantium. Sit, error
+                        saepe. Illo veniam facere natus, animi consequatur placeat, magnam eius voluptatum odio aut
+                        </p>
+                    <a href=""
+                        class="uppercase text-base font-semibold bg-gray-800 py-3 text-white px-8 rounded-md hover:shadow-lg hover:opacity-90 transition duration-300 ease-in-out">explore!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section calculator end -->
+
+    <!-- section footer -->
+    <footer class="bg-gray-800 pb-12 pt-24">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/4">
+                    <h2 class="font-bold text-4xl text-white mb-5">GYM</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias consectetur
+                         adipisci vitae? Quos, beatae omnis.</p>
+                </div>
+                <div class="w-full px-4 mb-12 md:w-1/4">
+                    <h3 class="font-semibold text-xl text-white mb-5 uppercase">Menu</h3>
+                    <ul class="text-slate-300">
+                        <li>
+                            <a href="#home" class="inline-block text-base hover:text-[#f97316] mb-3">Beranda</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="inline-block text-base hover:text-[#f97316] mb-3">Tentang Saya</a>
+                        </li>
+                        <li>
+                            <a href="#features" class="inline-block text-base hover:text-[#f97316] mb-3">Feature</a>
+                        </li>
+                        <li>
+                            <a href="#classes" class="inline-block text-base hover:text-[#f97316] mb-3">Classes</a>
+                        </li>
+                        <li>
+                            <a href="#schedule" class="inline-block text-base hover:text-[#f97316] mb-3">Schedule</a>
+                        </li>
+                        <li>
+                            <a href="#calculator" class="inline-block text-base hover:text-[#f97316] mb-3">Calculator</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full px-4 mb-12 md:w-1/4">
+                    <h3 class="font-semibold text-xl text-white mb-5 uppercase">Address</h3>
+                    <ul class="text-slate-300">
+                        <li>
+                            Setiabudi
+                        </li>
+                        <li>
+                           Jakarta Selatan
+                        </li>
+                    </ul>
+                </div>
+                <div class="w-full px-4 mb-12 md:w-1/4">
+                    <div class="flex items-center justify-center mb-5">
+                    <!-- youtube -->
+                    <a href="#" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-[#f97316] hover:bg-[#f97316] hover:text-white">
+                        <svg role="img" class="fill-current" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/skysalsa_/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-[#f97316] hover:bg-[#f97316] hover:text-white">
+                        <svg role="img" class="fill-current" width="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <div class="flex my-6">
+                <div class="items-start justify-start">
+                    <p class="font-medium text-xs text-slate-500 text-center">Dibuat dengan <span class="bg-pink-500">❤</span> oleh <a href="https://www.linkedin.com/in/alyasalsanm/" target="_blank" class="font-bold text-[#f97316]">Alya Salsa</a>, Mengunakan <a href="https://tailwindcss.com/" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a></p>
+                </div>
+                <div class="flex ml-auto">
+                    <p class="font-medium text-xs text-slate-500 text-center ml-6">Privacy Policy</p>
+                    <p class="font-medium text-xs text-slate-500 text-center ml-6">Term Of Line</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- section footer -->
+
+    <!-- section back to top start-->
+    <a href="#home" class="hidden fixed justify-center items-center bottom-4 right-4 rounded-full z-[9999] h-14 w-14 bg-[#f97316] p-4 hover:animate-pulse" id="to-top">
+        <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2 "></span>
+    </a>
+    <!-- section back to top end -->
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".slide-content", {
+            slidesPerView: 3,
+            spaceBetween: 25,
+            loop: true,
+            centerSlide: 'true',
+            fade: 'true',
+            grabCursor: 'true',
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+    </script>
+    <!-- script all -->
+    <script src="dist/js/script.js"></script>
+</body>
+
+</html>
